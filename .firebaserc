@@ -1,0 +1,10 @@
+{
+  "projects": {},
+  "targets": {
+    "pobrespandas-home": {
+      "hosting": {
+        "home": ["pobrespandas"]
+      }
+    }
+  }
+}
