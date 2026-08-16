@@ -48,4 +48,5 @@ La cuenta de Google debe tener permisos sobre el proyecto `pobrespandas-home`. S
 
 ## Pendientes
 
-- Inventar contenido real para las columnas `ideas`, `design` y `code` de `public/index.html`. Hoy son placeholders del eslogan (all my life / chewing bamboo / digital edition / etc.) y apuntan a `#publication`. Mantener el layout de 3 columnas y el bilingüismo EN|ES.
+- Inventar contenido real para las columnas `ideas`, `design` y `code` de `public/index.html`. Hoy son placeholders del eslogan (all my life / chewing bamboo / digital edition / etc.) y apuntan a `#publication`. Mantener el layout de 3 columnas y el bilingüismo EN|ES. (AT-197)
+- Convertir la sección `Prime Agent extensions` (Pandi + `prime-question` + `prime-cursor-sdk`) en una publicación del blog, con el mismo formato que el post de Buscaglia en `#publication` / `#about`. Decidir si queda teaser+link o se reemplaza por el post. (AT-198)
