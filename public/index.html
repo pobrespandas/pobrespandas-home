@@ -55,6 +55,7 @@
       border: 0;
       background: transparent;
       color: #0000ee;
+      cursor: pointer;
       font: 13px Arial, Helvetica, sans-serif;
       text-decoration: underline;
     }
@@ -65,26 +66,6 @@
     }
     .language-switcher button:hover { background: #eee; }
     .language-switcher span { color: #999; }
-
-    .search {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 6px;
-      padding: 8px;
-      margin-bottom: 16px;
-      background: #eee;
-      border: 1px solid #ccc;
-    }
-    input, button {
-      min-height: 30px;
-      border: 1px solid #999;
-      border-radius: 2px;
-      background: #fff;
-      font: 14px Arial, Helvetica, sans-serif;
-    }
-    input { width: 100%; padding: 5px 8px; }
-    .search button { padding: 4px 16px; cursor: pointer; background: #f7f7f7; }
-    .search button:active { background: #ddd; }
 
     .layout {
       display: grid;
@@ -260,11 +241,6 @@
     </div>
   </header>
 
-  <form class="search" role="search" onsubmit="return false">
-    <input type="search" data-i18n-placeholder="searchPlaceholder" data-i18n-aria-label="searchLabel" aria-label="Search" placeholder="search pobres pandas">
-    <button type="submit" data-i18n="search">search</button>
-  </form>
-
   <div class="layout" id="top">
     <aside>
       <p class="side-title" data-i18n="pobresPandas">pobres pandas</p>
@@ -386,9 +362,6 @@
         placeLine: "pobres pandas, a lifetime chewing bamboo / I want the whole menu",
         menu: "the whole menu",
         about: "about pp",
-        searchPlaceholder: "search pobres pandas",
-        searchLabel: "Search",
-        search: "search",
         pobresPandas: "pobres pandas",
         publication: "publication",
         ideas: "ideas",
@@ -429,9 +402,6 @@
         placeLine: "pobres pandas, toda la vida masticando bambú / lo que es yo, yo quiero todo el menú",
         menu: "todo el menú",
         about: "acerca de pp",
-        searchPlaceholder: "buscar en pobres pandas",
-        searchLabel: "Buscar",
-        search: "buscar",
         pobresPandas: "pobres pandas",
         publication: "publicación",
         ideas: "ideas",
