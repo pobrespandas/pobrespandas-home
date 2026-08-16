@@ -45,3 +45,7 @@ La cuenta de Google debe tener permisos sobre el proyecto `pobrespandas-home`. S
    ```
 
 `firebase.json` define que sólo se publica `public/`. La caché local `.firebase/` está ignorada por Git.
+
+## Pendientes
+
+- Inventar contenido real para las columnas `ideas`, `design` y `code` de `public/index.html`. Hoy son placeholders del eslogan (all my life / chewing bamboo / digital edition / etc.) y apuntan a `#publication`. Mantener el layout de 3 columnas y el bilingüismo EN|ES.
