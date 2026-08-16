@@ -131,6 +131,41 @@
     .extension-card p { margin: 0 0 12px; font-size: 14px; line-height: 1.4; }
     .extension-links { font-size: 13px; }
     .extension-links a { margin-right: 12px; }
+    .install-steps {
+      max-width: 720px;
+      margin: 22px 0 8px;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+    }
+    .install-steps h2 {
+      margin: 0 0 8px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #111;
+      font: bold 18px "Times New Roman", Times, serif;
+      text-align: left;
+    }
+    .install-steps ol {
+      margin: 0 0 10px;
+      padding-left: 22px;
+      font: 15px/1.45 Arial, Helvetica, sans-serif;
+    }
+    .install-steps li { margin: 0 0 6px; }
+    .install-steps pre {
+      margin: 8px 0;
+      padding: 10px 12px;
+      overflow-x: auto;
+      border: 1px solid #ccc;
+      background: #fff;
+      font: 13px/1.4 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .install-steps .install-note {
+      margin: 0;
+      color: #444;
+      font: 14px/1.4 Arial, Helvetica, sans-serif;
+    }
 
     .posting {
       grid-column: 1 / -1;
@@ -315,6 +350,19 @@
             </div>
           </div>
           <p data-i18n="extensionsIntro">Small tools for agents who need better questions and more ways to work. Two packages for Prime Agent, published on npm and open on GitHub.</p>
+          <div class="install-steps">
+            <h2 data-i18n="installTitle">Install in Prime Agent</h2>
+            <ol>
+              <li data-i18n="installStep1">Install each package from npm:</li>
+            </ol>
+            <pre><code>prime-agent package install npm:prime-question
+prime-agent package install npm:prime-cursor-sdk</code></pre>
+            <ol start="2">
+              <li data-i18n="installStep2">Restart Prime Agent, or run /reload in the current session.</li>
+              <li data-i18n="installStep3">Ask the agent to use the tools: question for interactive prompts, and the Cursor SDK provider for Cursor agents.</li>
+            </ol>
+            <p class="install-note" data-i18n="installNote">More detail lives in each package README on npm and GitHub.</p>
+          </div>
           <div class="extension-cards">
             <article class="extension-card">
               <h3><a href="https://www.npmjs.com/package/prime-question" target="_blank" rel="noopener">prime-question</a></h3>
@@ -376,6 +424,11 @@
         pandiCaption: "The panda behind the Pandi extensions.",
         pandiRepo: "extension collection on GitHub",
         extensionsIntro: "Small tools for agents who need better questions and more ways to work. Two packages for Prime Agent, published on npm and open on GitHub.",
+        installTitle: "Install in Prime Agent",
+        installStep1: "Install each package from npm:",
+        installStep2: "Restart Prime Agent, or run /reload in the current session.",
+        installStep3: "Ask the agent to use the tools: question for interactive prompts, and the Cursor SDK provider for Cursor agents.",
+        installNote: "More detail lives in each package README on npm and GitHub.",
         questionDescription: "An interactive question tool with selectable options and free-form answers. It works in Prime Agent's interactive and daemon modes.",
         cursorDescription: "A Cursor SDK provider for Prime Agent, bringing Cursor local and cloud agents into the Prime model and tool workflow.",
         npm: "npm",
@@ -421,6 +474,11 @@
         pandiCaption: "El panda detrás de las extensiones de Pandi.",
         pandiRepo: "colección de extensiones en GitHub",
         extensionsIntro: "Herramientas pequeñas para agentes que necesitan mejores preguntas y más formas de trabajar. Dos paquetes para Prime Agent, publicados en npm y abiertos en GitHub.",
+        installTitle: "Instalar en Prime Agent",
+        installStep1: "Instalá cada paquete desde npm:",
+        installStep2: "Reiniciá Prime Agent, o corré /reload en la sesión actual.",
+        installStep3: "Pedile al agente que use las herramientas: question para prompts interactivos, y el proveedor Cursor SDK para agentes de Cursor.",
+        installNote: "Más detalle está en el README de cada paquete en npm y GitHub.",
         questionDescription: "Una herramienta de preguntas interactivas con opciones seleccionables y respuestas libres. Funciona en los modos interactivo y daemon de Prime Agent.",
         cursorDescription: "Un proveedor de Cursor SDK para Prime Agent que incorpora agentes locales y cloud de Cursor al flujo de modelos y herramientas de Prime.",
         npm: "npm",
