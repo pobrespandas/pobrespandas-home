@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pobres Pandas — Toda la vida masticando bambú. Lo que es yo, yo quiero todo el menú.">
+  <meta name="description" content="Pobres Pandas — ideas, design, code, and the whole menu.">
   <meta name="theme-color" content="#eeeeee">
   <title>Pobres Pandas</title>
   <style>
@@ -36,7 +36,25 @@
     .logo:hover { text-decoration: none; }
     .place { text-align: center; font-size: 14px; }
     .place strong { display: block; font-size: 18px; font-weight: normal; }
+    .place span { display: block; }
     .account { text-align: right; font-size: 13px; }
+    .language-switcher { margin-bottom: 4px; white-space: nowrap; }
+    .language-switcher button {
+      min-height: 0;
+      padding: 0 2px;
+      border: 0;
+      background: transparent;
+      color: #0000ee;
+      font: 13px Arial, Helvetica, sans-serif;
+      text-decoration: underline;
+    }
+    .language-switcher button[aria-pressed="true"] {
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .language-switcher button:hover { background: #eee; }
+    .language-switcher span { color: #999; }
 
     .search {
       display: grid;
@@ -55,8 +73,8 @@
       font: 14px Arial, Helvetica, sans-serif;
     }
     input { width: 100%; padding: 5px 8px; }
-    button { padding: 4px 16px; cursor: pointer; background: #f7f7f7; }
-    button:active { background: #ddd; }
+    .search button { padding: 4px 16px; cursor: pointer; background: #f7f7f7; }
+    .search button:active { background: #ddd; }
 
     .layout {
       display: grid;
@@ -93,6 +111,48 @@
     }
     .panel ul { margin: 8px 0 20px; padding: 0; list-style: none; }
     .panel li { margin: 0 0 6px; padding-left: 7px; font-size: 14px; }
+
+    .extensions {
+      grid-column: 1 / -1;
+      margin-top: 7px;
+      border-top: 1px solid #ccc;
+    }
+    .pandi-mark {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 14px 7px 8px;
+    }
+    .pandi-face {
+      margin: 0;
+      color: #222;
+      font: 8px/.62 monospace;
+      letter-spacing: 0;
+    }
+    .pandi-copy strong { display: block; font: bold 22px Georgia, "Times New Roman", serif; }
+    .pandi-copy span { display: block; margin: 3px 0 7px; font-size: 13px; }
+    .extension-intro {
+      max-width: 720px;
+      margin: 12px 7px 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .extension-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 0 7px 20px;
+    }
+    .extension-card {
+      padding: 12px;
+      border: 1px solid #ccc;
+      background: #fafafa;
+    }
+    .extension-card h3 { margin: 0 0 8px; font-size: 18px; }
+    .extension-card p { margin: 0 0 12px; font-size: 14px; line-height: 1.4; }
+    .extension-links { font-size: 13px; }
+    .extension-links a { margin-right: 12px; }
 
     .posting {
       grid-column: 1 / -1;
@@ -150,6 +210,7 @@
       aside { display: none; }
       .board { grid-template-columns: 1fr 1fr; gap: 10px; }
       .posting { grid-column: 1 / -1; }
+      .extension-cards { grid-template-columns: 1fr; }
       h1 { margin-top: 18px; font-size: clamp(31px, 10vw, 48px); }
       .panel:last-of-type { grid-column: 1 / -1; }
     }
@@ -158,67 +219,114 @@
 <body>
   <header>
     <a class="logo" href="#top">pobres pandas</a>
-    <div class="place"><strong>internet</strong>todo el menú</div>
-    <div class="account"><a href="#acerca">acerca de pp</a></div>
+    <div class="place"><strong data-i18n="internet">internet</strong><span data-i18n="menu">the whole menu</span></div>
+    <div class="account">
+      <nav class="language-switcher" data-i18n-aria-label="languageSwitcher" aria-label="Language">
+        <button type="button" data-language="en" aria-pressed="true">EN</button>
+        <span>|</span>
+        <button type="button" data-language="es" aria-pressed="false">ES</button>
+      </nav>
+      <a href="#about" data-i18n="about">about pp</a>
+    </div>
   </header>
 
   <form class="search" role="search" onsubmit="return false">
-    <input type="search" aria-label="Buscar" placeholder="buscar en pobres pandas">
-    <button type="submit">buscar</button>
+    <input type="search" data-i18n-placeholder="searchPlaceholder" data-i18n-aria-label="searchLabel" aria-label="Search" placeholder="search pobres pandas">
+    <button type="submit" data-i18n="search">search</button>
   </form>
 
   <div class="layout" id="top">
     <aside>
-      <p class="side-title">pobres pandas</p>
+      <p class="side-title" data-i18n="pobresPandas">pobres pandas</p>
       <ul>
-        <li><a href="#publicacion">publicación</a></li>
-        <li><a href="#ideas">ideas</a></li>
-        <li><a href="#diseno">diseño</a></li>
-        <li><a href="#codigo">código</a></li>
+        <li><a href="#publication" data-i18n="publication">publication</a></li>
+        <li><a href="#ideas" data-i18n="ideas">ideas</a></li>
+        <li><a href="#design" data-i18n="design">design</a></li>
+        <li><a href="#code" data-i18n="code">code</a></li>
+        <li><a href="#extensions" data-i18n="extensions">extensions</a></li>
       </ul>
-      <p class="side-title">estado</p>
+      <p class="side-title" data-i18n="status">status</p>
       <ul>
-        <li>con hambre</li>
-        <li>sin dieta creativa</li>
-        <li>hecho en internet</li>
+        <li data-i18n="hungry">hungry</li>
+        <li data-i18n="noCreativeDiet">no creative diet</li>
+        <li data-i18n="madeOnInternet">made on the internet</li>
       </ul>
     </aside>
 
     <main class="board">
       <section class="panel" id="ideas">
-        <h2>ideas</h2>
+        <h2 data-i18n="ideas">ideas</h2>
         <ul>
-          <li><a href="#publicacion">toda la vida</a></li>
-          <li><a href="#publicacion">masticando bambú</a></li>
-          <li><a href="#publicacion">quiero todo</a></li>
+          <li><a href="#publication" data-i18n="allMyLife">all my life</a></li>
+          <li><a href="#publication" data-i18n="chewingBamboo">chewing bamboo</a></li>
+          <li><a href="#publication" data-i18n="wantEverything">I want everything</a></li>
         </ul>
       </section>
 
-      <section class="panel" id="diseno">
-        <h2>diseño</h2>
+      <section class="panel" id="design">
+        <h2 data-i18n="design">design</h2>
         <ul>
-          <li><a href="#publicacion">pobres pandas</a></li>
-          <li><a href="#publicacion">edición digital</a></li>
-          <li><a href="#publicacion">sin dieta creativa</a></li>
+          <li><a href="#publication" data-i18n="pobresPandas">pobres pandas</a></li>
+          <li><a href="#publication" data-i18n="digitalEdition">digital edition</a></li>
+          <li><a href="#publication" data-i18n="noCreativeDiet">no creative diet</a></li>
         </ul>
       </section>
 
-      <section class="panel" id="codigo">
-        <h2>código</h2>
+      <section class="panel" id="code">
+        <h2 data-i18n="code">code</h2>
         <ul>
-          <li><a href="#publicacion">hecho en internet</a></li>
-          <li><a href="#publicacion">con hambre</a></li>
-          <li><a href="#publicacion">todo el menú</a></li>
+          <li><a href="#publication" data-i18n="madeOnInternet">made on the internet</a></li>
+          <li><a href="#publication" data-i18n="hungry">hungry</a></li>
+          <li><a href="#publication" data-i18n="menu">the whole menu</a></li>
         </ul>
       </section>
 
-      <article class="posting" id="publicacion">
-        <div class="posting-meta">publicado hoy &nbsp; · &nbsp; edición digital 001</div>
-        <h1>Toda la vida masticando bambú <span class="slash">/</span> lo que es yo, yo quiero todo el menú</h1>
-        <a class="reply" href="#acerca">responder</a>
-        <div class="post-body" id="acerca">
-          <p>Ideas. Diseño. Código.</p>
-          <p>Una publicación de <strong>Pobres Pandas</strong>.<br>Sin dieta creativa. Hecho en internet.</p>
+      <section class="panel extensions" id="extensions">
+        <h2 data-i18n="extensionsTitle">Prime Agent extensions</h2>
+        <div class="pandi-mark">
+          <pre class="pandi-face" role="img" data-i18n-aria-label="pandiLogo" aria-label="Pandi panda logo">████    ████
+░░░░░░░░░░░░░░░░
+░░████░░░░████░░
+░░░░░░████░░░░░░
+░░░░░░░░░░░░░░░░
+██░░░░░░░░░░░░██
+██░░░░░░░░░░░░██
+  ░░░░░░░░░░░░&#32;&#32;
+  ████    ████</pre>
+          <div class="pandi-copy">
+            <strong>Pandi</strong>
+            <span data-i18n="pandiCaption">The panda behind the Pandi extensions.</span>
+            <a href="https://github.com/andrestobelem/pandi-extensions" target="_blank" rel="noopener" data-i18n="pandiRepo">extension collection on GitHub</a>
+          </div>
+        </div>
+        <p class="extension-intro" data-i18n="extensionsIntro">Small tools for agents who need better questions and more ways to work.</p>
+        <div class="extension-cards">
+          <article class="extension-card">
+            <h3><a href="https://www.npmjs.com/package/prime-question" target="_blank" rel="noopener">prime-question</a></h3>
+            <p data-i18n="questionDescription">An interactive question tool with selectable options and free-form answers. It works in Prime Agent's interactive and daemon modes.</p>
+            <div class="extension-links">
+              <a href="https://www.npmjs.com/package/prime-question" target="_blank" rel="noopener" data-i18n="npm">npm</a>
+              <a href="https://github.com/andrestobelem/prime-question" target="_blank" rel="noopener" data-i18n="github">GitHub</a>
+            </div>
+          </article>
+          <article class="extension-card">
+            <h3><a href="https://www.npmjs.com/package/prime-cursor-sdk" target="_blank" rel="noopener">prime-cursor-sdk</a></h3>
+            <p data-i18n="cursorDescription">A Cursor SDK provider for Prime Agent, bringing Cursor local and cloud agents into the Prime model and tool workflow.</p>
+            <div class="extension-links">
+              <a href="https://www.npmjs.com/package/prime-cursor-sdk" target="_blank" rel="noopener" data-i18n="npm">npm</a>
+              <a href="https://github.com/andrestobelem/prime-cursor-sdk" target="_blank" rel="noopener" data-i18n="github">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <article class="posting" id="publication">
+        <div class="posting-meta" data-i18n="postingMeta">published today &nbsp; · &nbsp; digital edition 001</div>
+        <h1><span data-i18n="headlineOne">A lifetime chewing bamboo</span> <span class="slash">/</span> <span data-i18n="headlineTwo">I want the whole menu</span></h1>
+        <a class="reply" href="#about" data-i18n="reply">reply</a>
+        <div class="post-body" id="about">
+          <p data-i18n="postIdea">Ideas. Design. Code.</p>
+          <p><span data-i18n="postByline">A publication by</span> <strong>Pobres Pandas</strong>.<br><span data-i18n="postTagline">No creative diet. Made on the internet.</span></p>
         </div>
       </article>
     </main>
@@ -226,9 +334,131 @@
 
   <footer>
     © <span id="year">2025</span> pobres pandas
-    <a href="#top">inicio</a>
-    <a href="#acerca">acerca</a>
+    <a href="#top" data-i18n="home">home</a>
+    <a href="#about" data-i18n="about">about pp</a>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    const copy = {
+      en: {
+        title: "Pobres Pandas",
+        description: "Pobres Pandas — ideas, design, code, and the whole menu.",
+        languageSwitcher: "Language",
+        internet: "internet",
+        menu: "the whole menu",
+        about: "about pp",
+        searchPlaceholder: "search pobres pandas",
+        searchLabel: "Search",
+        search: "search",
+        pobresPandas: "pobres pandas",
+        publication: "publication",
+        ideas: "ideas",
+        design: "design",
+        code: "code",
+        extensions: "extensions",
+        status: "status",
+        hungry: "hungry",
+        noCreativeDiet: "no creative diet",
+        madeOnInternet: "made on the internet",
+        allMyLife: "all my life",
+        chewingBamboo: "chewing bamboo",
+        wantEverything: "I want everything",
+        digitalEdition: "digital edition",
+        extensionsTitle: "Prime Agent extensions",
+        pandiLogo: "Pandi panda logo",
+        pandiCaption: "The panda behind the Pandi extensions.",
+        pandiRepo: "extension collection on GitHub",
+        extensionsIntro: "Small tools for agents who need better questions and more ways to work.",
+        questionDescription: "An interactive question tool with selectable options and free-form answers. It works in Prime Agent's interactive and daemon modes.",
+        cursorDescription: "A Cursor SDK provider for Prime Agent, bringing Cursor local and cloud agents into the Prime model and tool workflow.",
+        npm: "npm",
+        github: "GitHub",
+        postingMeta: "published today · digital edition 001",
+        headlineOne: "A lifetime chewing bamboo",
+        headlineTwo: "I want the whole menu",
+        reply: "reply",
+        postIdea: "Ideas. Design. Code.",
+        postByline: "A publication by",
+        postTagline: "No creative diet. Made on the internet.",
+        home: "home"
+      },
+      es: {
+        title: "Pobres Pandas",
+        description: "Pobres Pandas — ideas, diseño, código y todo el menú.",
+        languageSwitcher: "Idioma",
+        internet: "internet",
+        menu: "todo el menú",
+        about: "acerca de pp",
+        searchPlaceholder: "buscar en pobres pandas",
+        searchLabel: "Buscar",
+        search: "buscar",
+        pobresPandas: "pobres pandas",
+        publication: "publicación",
+        ideas: "ideas",
+        design: "diseño",
+        code: "código",
+        extensions: "extensiones",
+        status: "estado",
+        hungry: "con hambre",
+        noCreativeDiet: "sin dieta creativa",
+        madeOnInternet: "hecho en internet",
+        allMyLife: "toda la vida",
+        chewingBamboo: "masticando bambú",
+        wantEverything: "quiero todo",
+        digitalEdition: "edición digital",
+        extensionsTitle: "Extensiones de Prime Agent",
+        pandiLogo: "Logo del panda Pandi",
+        pandiCaption: "El panda detrás de las extensiones de Pandi.",
+        pandiRepo: "colección de extensiones en GitHub",
+        extensionsIntro: "Herramientas pequeñas para agentes que necesitan mejores preguntas y más formas de trabajar.",
+        questionDescription: "Una herramienta de preguntas interactivas con opciones seleccionables y respuestas libres. Funciona en los modos interactivo y daemon de Prime Agent.",
+        cursorDescription: "Un proveedor de Cursor SDK para Prime Agent que incorpora agentes locales y cloud de Cursor al flujo de modelos y herramientas de Prime.",
+        npm: "npm",
+        github: "GitHub",
+        postingMeta: "publicado hoy · edición digital 001",
+        headlineOne: "Toda la vida masticando bambú",
+        headlineTwo: "Lo que es yo, yo quiero todo el menú",
+        reply: "responder",
+        postIdea: "Ideas. Diseño. Código.",
+        postByline: "Una publicación de",
+        postTagline: "Sin dieta creativa. Hecho en internet.",
+        home: "inicio"
+      }
+    };
+
+    const languageButtons = document.querySelectorAll("[data-language]");
+
+    function setLanguage(language) {
+      const selectedLanguage = language === "es" ? "es" : "en";
+      const selectedCopy = copy[selectedLanguage];
+      document.documentElement.lang = selectedLanguage;
+      document.title = selectedCopy.title;
+      document.querySelector('meta[name="description"]').content = selectedCopy.description;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (key && selectedCopy[key]) element.textContent = selectedCopy[key];
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.dataset.i18nPlaceholder;
+        if (key && selectedCopy[key]) element.placeholder = selectedCopy[key];
+      });
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.dataset.i18nAriaLabel;
+        if (key && selectedCopy[key]) element.setAttribute("aria-label", selectedCopy[key]);
+      });
+      languageButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.language === selectedLanguage));
+      });
+      localStorage.setItem("pobres-pandas-language", selectedLanguage);
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    const savedLanguage = localStorage.getItem("pobres-pandas-language");
+    setLanguage(savedLanguage === "es" ? "es" : "en");
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
