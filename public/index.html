@@ -31,9 +31,7 @@
       padding-bottom: 10px;
       border-bottom: 1px solid #ccc;
     }
-    .brand {
-      min-width: 0;
-    }
+    .brand { min-width: 0; }
     .logo {
       display: inline-block;
       color: #551a8b;
@@ -103,16 +101,11 @@
     .panel ul { margin: 8px 0 20px; padding: 0; list-style: none; }
     .panel li { margin: 0 0 6px; padding-left: 7px; font-size: 14px; }
 
-    .extensions {
-      grid-column: 1 / -1;
-      margin-top: 7px;
-      border-top: 1px solid #ccc;
-    }
     .pandi-mark {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin: 14px 7px 8px;
+      margin: 18px 0 16px;
     }
     .pandi-face {
       margin: 0;
@@ -123,18 +116,11 @@
     }
     .pandi-copy strong { display: block; font: bold 22px "Times New Roman", Times, serif; }
     .pandi-copy span { display: block; margin: 3px 0 7px; font-size: 13px; }
-    .extension-intro {
-      max-width: 720px;
-      margin: 12px 7px 16px;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 18px;
-      line-height: 1.4;
-    }
     .extension-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin: 0 7px 20px;
+      margin: 16px 0 8px;
     }
     .extension-card {
       padding: 12px;
@@ -246,10 +232,10 @@
       <p class="side-title" data-i18n="pobresPandas">pobres pandas</p>
       <ul>
         <li><a href="#publication" data-i18n="publication">publication</a></li>
+        <li><a href="#extensions-post" data-i18n="extensions">extensions</a></li>
         <li><a href="#ideas" data-i18n="ideas">ideas</a></li>
         <li><a href="#design" data-i18n="design">design</a></li>
         <li><a href="#code" data-i18n="code">code</a></li>
-        <li><a href="#extensions" data-i18n="extensions">extensions</a></li>
       </ul>
       <p class="side-title" data-i18n="status">status</p>
       <ul>
@@ -263,67 +249,28 @@
       <section class="panel" id="ideas">
         <h2 data-i18n="ideas">ideas</h2>
         <ul>
-          <li><a href="#publication" data-i18n="allMyLife">all my life</a></li>
-          <li><a href="#publication" data-i18n="chewingBamboo">chewing bamboo</a></li>
-          <li><a href="#publication" data-i18n="wantEverything">I want everything</a></li>
+          <li><a href="#publication" data-i18n="itemWholeMenu">the whole menu</a></li>
+          <li><a href="#publication" data-i18n="itemNoDiet">no creative diet</a></li>
+          <li><a href="#publication" data-i18n="itemMadeOnline">made on the internet</a></li>
         </ul>
       </section>
 
       <section class="panel" id="design">
         <h2 data-i18n="design">design</h2>
         <ul>
-          <li><a href="#publication" data-i18n="pobresPandas">pobres pandas</a></li>
-          <li><a href="#publication" data-i18n="digitalEdition">digital edition</a></li>
-          <li><a href="#publication" data-i18n="noCreativeDiet">no creative diet</a></li>
+          <li><a href="#publication" data-i18n="itemEdition001">digital edition 001</a></li>
+          <li><a href="#extensions-post" data-i18n="itemPandiFace">Pandi face</a></li>
+          <li><a href="#about" data-i18n="itemSong">Pobres pandas (song)</a></li>
         </ul>
       </section>
 
       <section class="panel" id="code">
         <h2 data-i18n="code">code</h2>
         <ul>
-          <li><a href="#publication" data-i18n="madeOnInternet">made on the internet</a></li>
-          <li><a href="#publication" data-i18n="hungry">hungry</a></li>
-          <li><a href="#publication" data-i18n="menu">the whole menu</a></li>
+          <li><a href="#extensions-post" data-i18n="itemPrimeExtensions">Prime Agent extensions</a></li>
+          <li><a href="#extensions-post" data-i18n="itemAskBetter">ask better questions</a></li>
+          <li><a href="#extensions-post" data-i18n="itemCursorLoop">Cursor in the loop</a></li>
         </ul>
-      </section>
-
-      <section class="panel extensions" id="extensions">
-        <h2 data-i18n="extensionsTitle">Prime Agent extensions</h2>
-        <div class="pandi-mark">
-          <pre class="pandi-face" role="img" data-i18n-aria-label="pandiLogo" aria-label="Pandi panda logo">████    ████
-░░░░░░░░░░░░░░░░
-░░████░░░░████░░
-░░░░░░████░░░░░░
-░░░░░░░░░░░░░░░░
-██░░░░░░░░░░░░██
-██░░░░░░░░░░░░██
-  ░░░░░░░░░░░░&#32;&#32;
-  ████    ████</pre>
-          <div class="pandi-copy">
-            <strong>Pandi</strong>
-            <span data-i18n="pandiCaption">The panda behind the Pandi extensions.</span>
-            <a href="https://github.com/andrestobelem/pandi-extensions" target="_blank" rel="noopener" data-i18n="pandiRepo">extension collection on GitHub</a>
-          </div>
-        </div>
-        <p class="extension-intro" data-i18n="extensionsIntro">Small tools for agents who need better questions and more ways to work.</p>
-        <div class="extension-cards">
-          <article class="extension-card">
-            <h3><a href="https://www.npmjs.com/package/prime-question" target="_blank" rel="noopener">prime-question</a></h3>
-            <p data-i18n="questionDescription">An interactive question tool with selectable options and free-form answers. It works in Prime Agent's interactive and daemon modes.</p>
-            <div class="extension-links">
-              <a href="https://www.npmjs.com/package/prime-question" target="_blank" rel="noopener" data-i18n="npm">npm</a>
-              <a href="https://github.com/andrestobelem/prime-question" target="_blank" rel="noopener" data-i18n="github">GitHub</a>
-            </div>
-          </article>
-          <article class="extension-card">
-            <h3><a href="https://www.npmjs.com/package/prime-cursor-sdk" target="_blank" rel="noopener">prime-cursor-sdk</a></h3>
-            <p data-i18n="cursorDescription">A Cursor SDK provider for Prime Agent, bringing Cursor local and cloud agents into the Prime model and tool workflow.</p>
-            <div class="extension-links">
-              <a href="https://www.npmjs.com/package/prime-cursor-sdk" target="_blank" rel="noopener" data-i18n="npm">npm</a>
-              <a href="https://github.com/andrestobelem/prime-cursor-sdk" target="_blank" rel="noopener" data-i18n="github">GitHub</a>
-            </div>
-          </article>
-        </div>
       </section>
 
       <article class="posting" id="publication">
@@ -345,6 +292,49 @@
           </figure>
         </div>
       </article>
+
+      <article class="posting" id="extensions-post">
+        <div class="posting-meta" data-i18n="extensionsMeta">published today &nbsp; · &nbsp; digital edition 002</div>
+        <h1 data-i18n="extensionsTitle">Prime Agent extensions</h1>
+        <a class="reply" href="#code" data-i18n="reply">reply</a>
+        <div class="post-body">
+          <div class="pandi-mark">
+            <pre class="pandi-face" role="img" data-i18n-aria-label="pandiLogo" aria-label="Pandi panda logo">████    ████
+░░░░░░░░░░░░░░░░
+░░████░░░░████░░
+░░░░░░████░░░░░░
+░░░░░░░░░░░░░░░░
+██░░░░░░░░░░░░██
+██░░░░░░░░░░░░██
+  ░░░░░░░░░░░░&#32;&#32;
+  ████    ████</pre>
+            <div class="pandi-copy">
+              <strong>Pandi</strong>
+              <span data-i18n="pandiCaption">The panda behind the Pandi extensions.</span>
+              <a href="https://github.com/andrestobelem/pandi-extensions" target="_blank" rel="noopener" data-i18n="pandiRepo">extension collection on GitHub</a>
+            </div>
+          </div>
+          <p data-i18n="extensionsIntro">Small tools for agents who need better questions and more ways to work. Two packages for Prime Agent, published on npm and open on GitHub.</p>
+          <div class="extension-cards">
+            <article class="extension-card">
+              <h3><a href="https://www.npmjs.com/package/prime-question" target="_blank" rel="noopener">prime-question</a></h3>
+              <p data-i18n="questionDescription">An interactive question tool with selectable options and free-form answers. It works in Prime Agent's interactive and daemon modes.</p>
+              <div class="extension-links">
+                <a href="https://www.npmjs.com/package/prime-question" target="_blank" rel="noopener" data-i18n="npm">npm</a>
+                <a href="https://github.com/andrestobelem/prime-question" target="_blank" rel="noopener" data-i18n="github">GitHub</a>
+              </div>
+            </article>
+            <article class="extension-card">
+              <h3><a href="https://www.npmjs.com/package/prime-cursor-sdk" target="_blank" rel="noopener">prime-cursor-sdk</a></h3>
+              <p data-i18n="cursorDescription">A Cursor SDK provider for Prime Agent, bringing Cursor local and cloud agents into the Prime model and tool workflow.</p>
+              <div class="extension-links">
+                <a href="https://www.npmjs.com/package/prime-cursor-sdk" target="_blank" rel="noopener" data-i18n="npm">npm</a>
+                <a href="https://github.com/andrestobelem/prime-cursor-sdk" target="_blank" rel="noopener" data-i18n="github">GitHub</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </article>
     </main>
   </div>
 
@@ -360,7 +350,6 @@
         description: "Pobres Pandas — ideas, design, code, and the whole menu.",
         languageSwitcher: "Language",
         placeLine: "pobres pandas, a lifetime chewing bamboo / I want the whole menu",
-        menu: "the whole menu",
         about: "about pp",
         pobresPandas: "pobres pandas",
         publication: "publication",
@@ -372,15 +361,21 @@
         hungry: "hungry",
         noCreativeDiet: "no creative diet",
         madeOnInternet: "made on the internet",
-        allMyLife: "all my life",
-        chewingBamboo: "chewing bamboo",
-        wantEverything: "I want everything",
-        digitalEdition: "digital edition",
+        itemWholeMenu: "the whole menu",
+        itemNoDiet: "no creative diet",
+        itemMadeOnline: "made on the internet",
+        itemEdition001: "digital edition 001",
+        itemPandiFace: "Pandi face",
+        itemSong: "Pobres pandas (song)",
+        itemPrimeExtensions: "Prime Agent extensions",
+        itemAskBetter: "ask better questions",
+        itemCursorLoop: "Cursor in the loop",
         extensionsTitle: "Prime Agent extensions",
+        extensionsMeta: "published today · digital edition 002",
         pandiLogo: "Pandi panda logo",
         pandiCaption: "The panda behind the Pandi extensions.",
         pandiRepo: "extension collection on GitHub",
-        extensionsIntro: "Small tools for agents who need better questions and more ways to work.",
+        extensionsIntro: "Small tools for agents who need better questions and more ways to work. Two packages for Prime Agent, published on npm and open on GitHub.",
         questionDescription: "An interactive question tool with selectable options and free-form answers. It works in Prime Agent's interactive and daemon modes.",
         cursorDescription: "A Cursor SDK provider for Prime Agent, bringing Cursor local and cloud agents into the Prime model and tool workflow.",
         npm: "npm",
@@ -400,7 +395,6 @@
         description: "Pobres Pandas — ideas, diseño, código y todo el menú.",
         languageSwitcher: "Idioma",
         placeLine: "pobres pandas, toda la vida masticando bambú / lo que es yo, yo quiero todo el menú",
-        menu: "todo el menú",
         about: "acerca de pp",
         pobresPandas: "pobres pandas",
         publication: "publicación",
@@ -412,15 +406,21 @@
         hungry: "con hambre",
         noCreativeDiet: "sin dieta creativa",
         madeOnInternet: "hecho en internet",
-        allMyLife: "toda la vida",
-        chewingBamboo: "masticando bambú",
-        wantEverything: "quiero todo",
-        digitalEdition: "edición digital",
+        itemWholeMenu: "todo el menú",
+        itemNoDiet: "sin dieta creativa",
+        itemMadeOnline: "hecho en internet",
+        itemEdition001: "edición digital 001",
+        itemPandiFace: "cara de Pandi",
+        itemSong: "Pobres pandas (tema)",
+        itemPrimeExtensions: "Extensiones de Prime Agent",
+        itemAskBetter: "preguntar mejor",
+        itemCursorLoop: "Cursor en el circuito",
         extensionsTitle: "Extensiones de Prime Agent",
+        extensionsMeta: "publicado hoy · edición digital 002",
         pandiLogo: "Logo del panda Pandi",
         pandiCaption: "El panda detrás de las extensiones de Pandi.",
         pandiRepo: "colección de extensiones en GitHub",
-        extensionsIntro: "Herramientas pequeñas para agentes que necesitan mejores preguntas y más formas de trabajar.",
+        extensionsIntro: "Herramientas pequeñas para agentes que necesitan mejores preguntas y más formas de trabajar. Dos paquetes para Prime Agent, publicados en npm y abiertos en GitHub.",
         questionDescription: "Una herramienta de preguntas interactivas con opciones seleccionables y respuestas libres. Funciona en los modos interactivo y daemon de Prime Agent.",
         cursorDescription: "Un proveedor de Cursor SDK para Prime Agent que incorpora agentes locales y cloud de Cursor al flujo de modelos y herramientas de Prime.",
         npm: "npm",

@@ -46,9 +46,7 @@ La cuenta de Google debe tener permisos sobre el proyecto `pobrespandas-home`. S
 
 `firebase.json` define que sólo se publica `public/`. La caché local `.firebase/` está ignorada por Git.
 
-## Pendientes
+## Editorial (hecho)
 
-Estas piezas hay que **pensarlas** antes de implementar:
-
-- Inventar contenido real para las columnas `ideas`, `design` y `code` de `public/index.html`. Hoy son placeholders del eslogan (all my life / chewing bamboo / digital edition / etc.) y apuntan a `#publication`. Mantener el layout de 3 columnas y el bilingüismo EN|ES. (AT-197)
-- Convertir la sección `Prime Agent extensions` (Pandi + `prime-question` + `prime-cursor-sdk`) en una publicación del blog, con el mismo formato que el post de Buscaglia en `#publication` / `#about`. Acomodarla como ítem en alguna columna del board — **aún sin decidir cuál**. Decidir si queda teaser+link o se reemplaza por el post. (AT-198)
+- Columnas `ideas` / `design` / `code` con ítems reales bilingües (AT-197).
+- Extensiones Prime Agent como publicación del blog (`#extensions-post`, edición digital 002) y enlazadas desde la columna **code** (AT-198).
