@@ -22,24 +22,29 @@
 
     header {
       display: grid;
-      grid-template-columns: 180px 1fr 180px;
-      align-items: center;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 12px;
       min-height: 62px;
       margin-bottom: 14px;
+      padding-bottom: 10px;
       border-bottom: 1px solid #ccc;
     }
+    .brand {
+      min-width: 0;
+    }
     .logo {
+      display: inline-block;
       color: #551a8b;
       font: bold 25px "Times New Roman", Times, serif;
       letter-spacing: -1px;
     }
     .logo:hover { text-decoration: none; }
     .place {
-      text-align: center;
-      font: italic 13px/1.3 "Times New Roman", Times, serif;
+      margin: 4px 0 0;
+      max-width: 520px;
       color: #444;
-      max-width: 440px;
-      justify-self: center;
+      font: italic 13px/1.3 "Times New Roman", Times, serif;
     }
     .account { text-align: right; font-size: 13px; }
     .language-switcher { margin-bottom: 4px; white-space: nowrap; }
@@ -225,14 +230,9 @@
 
     @media (max-width: 680px) {
       body { width: calc(100% - 16px); margin-top: 4px; }
-      header { grid-template-columns: 1fr auto; }
+      header { gap: 8px; }
       .logo { font-size: 23px; }
-      .place {
-        grid-column: 1 / -1;
-        max-width: none;
-        margin: 4px 0 8px;
-        text-align: left;
-      }
+      .place { max-width: none; }
       .layout { grid-template-columns: 1fr; }
       aside { display: none; }
       .board { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -245,8 +245,10 @@
 </head>
 <body>
   <header>
-    <a class="logo" href="#top">pobres pandas</a>
-    <div class="place" data-i18n="placeLine">pobres pandas, a lifetime chewing bamboo / I want the whole menu</div>
+    <div class="brand">
+      <a class="logo" href="#top">pobres pandas</a>
+      <div class="place" data-i18n="placeLine">pobres pandas, a lifetime chewing bamboo / I want the whole menu</div>
+    </div>
     <div class="account">
       <nav class="language-switcher" data-i18n-aria-label="languageSwitcher" aria-label="Language">
         <button type="button" data-language="en" aria-pressed="true">EN</button>
