@@ -227,7 +227,12 @@
       body { width: calc(100% - 16px); margin-top: 4px; }
       header { grid-template-columns: 1fr auto; }
       .logo { font-size: 23px; }
-      .place { display: none; }
+      .place {
+        grid-column: 1 / -1;
+        max-width: none;
+        margin: 4px 0 8px;
+        text-align: left;
+      }
       .layout { grid-template-columns: 1fr; }
       aside { display: none; }
       .board { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -351,13 +356,13 @@
           <p><span data-i18n="postByline">A publication by</span> <strong>Pobres Pandas</strong>.<br><span data-i18n="postTagline">No creative diet. Made on the internet.</span></p>
           <figure class="about-video">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/8XEvrd5AeOM"
-              title="Martín Buscaglia y Nicolás Ibarburu — Latas (live at Distrito Siete)"
+              src="https://www.youtube-nocookie.com/embed/ssdTwDburJc"
+              title="Pobres pandas — Martín Buscaglia y sus Bochamakers"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen></iframe>
-            <figcaption class="about-video-caption" data-i18n="videoCaption">Martín Buscaglia with Nicolás Ibarburu playing “Latas” live at Distrito Siete.</figcaption>
+            <figcaption class="about-video-caption" data-i18n="videoCaption">Martín Buscaglia and his Bochamakers playing “Pobres pandas”.</figcaption>
           </figure>
         </div>
       </article>
@@ -411,7 +416,7 @@
         postIdea: "Ideas. Design. Code.",
         postByline: "A publication by",
         postTagline: "No creative diet. Made on the internet.",
-        videoCaption: "Martín Buscaglia with Nicolás Ibarburu playing “Latas” live at Distrito Siete.",
+        videoCaption: "Martín Buscaglia and his Bochamakers playing “Pobres pandas”.",
         home: "home"
       },
       es: {
@@ -454,7 +459,7 @@
         postIdea: "Ideas. Diseño. Código.",
         postByline: "Una publicación de",
         postTagline: "Sin dieta creativa. Hecho en internet.",
-        videoCaption: "Martín Buscaglia con Nicolás Ibarburu tocando “Latas” en vivo en Distrito Siete.",
+        videoCaption: "Martín Buscaglia y sus Bochamakers tocando “Pobres pandas”.",
         home: "inicio"
       }
     };
