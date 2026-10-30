@@ -1,9 +1,9 @@
 {
   "projects": {},
   "targets": {
-    "pobrespandas-home": {
+    "gen-lang-client-0607406471": {
       "hosting": {
-        "home": ["pobrespandas"]
+        "home": ["pobrespandas-principal"]
       }
     }
   }

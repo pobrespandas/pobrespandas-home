@@ -4,14 +4,13 @@
 
 Este repositorio contiene la home pública de pobrespandas. Firebase Hosting publica `public/` en:
 
-- https://pobrespandas.web.app
+- https://pobrespandas-principal.web.app
 
 ## Google Cloud y Firebase
 
-- Proyecto de Google Cloud / Firebase: `pobrespandas-home`.
-- Sitio Firebase Hosting: `pobrespandas`.
+- Proyecto de Google Cloud / Firebase: `gen-lang-client-0607406471`.
+- Sitio Firebase Hosting: `pobrespandas-principal`.
 - Target local de Firebase: `home` (definido en `.firebaserc`).
-- No usar el proyecto `gen-lang-client-0607406471` para esta home: es el proyecto anterior de pobrespandas y contiene otros recursos.
 
 ## Autenticación y verificación
 
@@ -21,12 +20,12 @@ Antes de operar, comprobar el contexto:
 
 ```sh
 gcloud auth list
-gcloud projects describe pobrespandas-home
+gcloud projects describe gen-lang-client-0607406471
 firebase projects:list
-firebase hosting:sites:list --project pobrespandas-home
+firebase hosting:sites:list --project gen-lang-client-0607406471
 ```
 
-La cuenta de Google debe tener permisos sobre el proyecto `pobrespandas-home`. Si Firebase CLI no está autenticado, ejecutar `firebase login` de forma interactiva.
+La cuenta de Google debe tener permisos sobre `gen-lang-client-0607406471`. Si Firebase CLI no está autenticado, ejecutar `firebase login` de forma interactiva.
 
 ## Despliegue
 
@@ -35,13 +34,13 @@ La cuenta de Google debe tener permisos sobre el proyecto `pobrespandas-home`. S
 3. Validar sin publicar:
 
    ```sh
-   firebase deploy --only hosting:home --project pobrespandas-home --dry-run
+   firebase deploy --only hosting:home --project gen-lang-client-0607406471 --dry-run
    ```
 
 4. Publicar:
 
    ```sh
-   firebase deploy --only hosting:home --project pobrespandas-home
+   firebase deploy --only hosting:home --project gen-lang-client-0607406471
    ```
 
 `firebase.json` define que sólo se publica `public/`. La caché local `.firebase/` está ignorada por Git.
